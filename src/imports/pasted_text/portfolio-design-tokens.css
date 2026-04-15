@@ -1,0 +1,229 @@
+FIGMA PROTOTYPE PROMPT — Pedro Gomes Portfolio
+
+CONCEPT
+A one-page portfolio website with a football pitch aesthetic meets Apple-level minimalism. The hero background uses dark pitch stripes. Navigation is fixed/sticky. All sections are accessible by clicking zones on an interactive football pitch diagram in the hero — not by scrolling. Think of it like a tactical board where clicking a zone reveals a section.
+
+FONTS
+
+Display / Headings: DM Serif Display (Google Fonts) — Regular 400, Italic 400
+Body / UI: DM Sans (Google Fonts) — Light 300, Regular 400, Medium 500
+
+
+COLOR TOKENS
+--green-pitch:   #4CAF50   (primary accent, buttons, highlights)
+--green-light:   #66BB6A   (hover states)
+--green-stripe:  #81C784   (dark section accents, footer logo)
+--green-dark:    #2E7D32   (dark button hover, muted text)
+--green-deep:    #1B5E20   (deepest green, text on light)
+--white:         #FFFFFF
+--off-white:     #F7FBF7   (card backgrounds)
+--gray-soft:     #E8F5E9   (tag backgrounds, skill bars)
+--text-dark:     #0A1A0B   (primary text, almost black-green)
+--text-muted:    #4A6741   (secondary body text)
+--contact-dark:  #0A1A0B   (dark section background, same as text-dark)
+
+HERO SCREEN — THE PITCH
+Full viewport height. Background is a dark football pitch.
+Background construction:
+
+Base color: #1a2e1a (very dark green)
+Alternating vertical stripes using repeating pattern:
+
+Stripe A: #1a2e1a
+Stripe B: #1f351f
+Stripe width: 80px each
+Opacity: 100% (this is the darkest version, matches the contact section darkness)
+
+
+
+Pitch markings overlaid on top in white at 18% opacity (rgba(255,255,255,0.18)):
+
+Full outer rectangle border (the pitch boundary), inset 48px from hero edges, 2px stroke
+Center circle: 120px diameter, centered, 2px stroke, no fill
+Center dot: 6px filled circle, dead center
+Halfway line: vertical line through center, full height of pitch rectangle, 2px stroke
+Left penalty box: rectangle, left-aligned inside pitch, 200px wide × 280px tall, centered vertically, 2px stroke
+Left goal box: smaller rectangle inside penalty box, 80px wide × 140px tall, centered, 2px stroke
+Left penalty spot: 6px dot, 150px from left edge of pitch
+Left penalty arc: semicircle on right edge of left penalty box, radius 80px, 2px stroke, no fill
+Right penalty box: mirror of left
+Right goal box: mirror of left
+Right penalty spot: mirror
+Right penalty arc: mirror
+Corner arcs: 4 corners, each a quarter circle, radius 20px, 2px stroke, no fill
+
+The pitch sits inside the hero. The hero has some padding around the pitch so the dark background bleeds slightly outside the pitch boundary.
+Interactive Pitch Zones — 5 clickable hotspots drawn as invisible rectangles over the pitch. On hover each zone glows with rgba(76,175,80,0.25) fill and a #4CAF50 dashed border (2px, 4px dash). A label badge appears on hover in #4CAF50 background, white text, DM Sans 11px, 500 weight, 100px border radius, uppercase, letter-spacing 1.5px.
+Zone definitions:
+
+Left Goal Area → label: "WORK" → on click: opens Work/Projects overlay panel
+Left Half → label: "SKILLS" → on click: opens Skills overlay panel
+Center Circle → label: "HOME" → on click: returns to hero default state / shows intro text
+Right Half → label: "ABOUT" → on click: opens About overlay panel
+Right Goal Area → label: "CONTACT" → on click: opens Contact overlay panel
+
+Hero text (appears centered above the pitch, before any zone is selected):
+
+Eyebrow pill: background #4CAF50, text #FFFFFF, text: "AVAILABLE FOR OPPORTUNITIES", font DM Sans 11px 500, letter-spacing 1.5px, padding 6px 16px, border-radius 100px, small white dot • before text at 70% opacity
+H1: DM Serif Display, ~72px, letter-spacing -2px, line-height 1.0, color #0A1A0B — BUT since hero background is dark, use #FFFFFF instead. Text: "Securing" newline "digital fields." (second line in italic, #4CAF50)
+Subheading: DM Sans 18px 300, color rgba(255,255,255,0.65), "Cybersecurity & IT student passionate about protecting systems — and the beautiful game."
+Two CTA buttons below:
+
+Primary: bg #4CAF50, text #FFFFFF, "View my work", 14px 500, padding 14px 32px, border-radius 100px
+Secondary: bg transparent, border 1.5px rgba(129,199,132,0.4), text rgba(255,255,255,0.8), "About me", same sizing
+
+
+
+
+FIXED NAV
+Height: 60px. Background: rgba(10,26,11,0.82) (dark version since hero is dark), backdrop blur 20px. Border-bottom: 1px rgba(76,175,80,0.15).
+
+Left: Logo P.Gomes — DM Serif Display 18px, color rgba(255,255,255,0.85), the . in #4CAF50
+Center: Nav links — DM Sans 13px 400, color rgba(255,255,255,0.55), items: Work · Skills · About. Gap 36px between items. Hover color: #81C784
+Right: CTA pill "Contact" — bg #4CAF50, text #FFFFFF, DM Sans 13px 500, padding 8px 20px, border-radius 100px. Hover: bg #2E7D32
+
+
+OVERLAY PANELS (triggered by clicking pitch zones)
+Each overlay slides up from the bottom or fades in as a full-screen layer on top of the hero pitch. The pitch remains faintly visible in the background at 30% opacity.
+Overlay background: rgba(10,26,11,0.96) with a very subtle repeating stripe pattern inherited from hero at 8% opacity.
+Close button: top-right corner, × symbol, DM Sans 24px, color rgba(255,255,255,0.4), hover #4CAF50.
+OVERLAY 1 — WORK (Left Goal)
+Section label: "SELECTED WORK" — DM Sans 11px 500, #4CAF50, letter-spacing 2px
+H2: DM Serif Display 48px, white — "Projects on the pitch." (italic word in #4CAF50)
+Intro: DM Sans 16px 300, rgba(255,255,255,0.55), max-width 520px
+Project cards grid: 3 columns, gap 20px. Featured card spans 2 columns.
+Each card:
+
+Background: rgba(255,255,255,0.04)
+Border: 1px rgba(76,175,80,0.15)
+Border-radius: 20px
+Card visual header (top): 200px tall (260px for featured). Gradient fills:
+
+Card 1 (featured): linear-gradient(135deg, #4CAF50, #2E7D32)
+Card 2: linear-gradient(135deg, #1B5E20, #388E3C)
+Card 3: linear-gradient(135deg, #66BB6A, #43A047)
+Card 4: linear-gradient(135deg, #81C784, #4CAF50)
+Card 5: linear-gradient(135deg, #388E3C, #1B5E20)
+
+
+Each card visual has a repeating vertical stripe overlay at 6% white opacity (same 60px stripe pattern)
+Icon box: 52×52px, rgba(255,255,255,0.15) bg, border-radius 14px, centered in visual area
+Tag pill: bg rgba(76,175,80,0.15), text #81C784, DM Sans 10px 500, letter-spacing 1.5px, uppercase, border-radius 100px, padding 4px 10px
+Card title: DM Serif Display 20px, #FFFFFF
+Card description: DM Sans 13px 300, rgba(255,255,255,0.55)
+Hover: translateY(-6px), box-shadow: 0 20px 60px rgba(76,175,80,0.15)
+
+Projects:
+
+(Featured, 2-col) "Firewall & Intrusion Detection Lab" — tag: NETWORK SECURITY
+"SOC Simulation" — tag: THREAT ANALYSIS
+"Python Automation Tools" — tag: SCRIPTING
+"Vulnerability Assessment" — tag: WEB SECURITY
+"Digital Forensics Report" — tag: FORENSICS
+
+
+OVERLAY 2 — SKILLS (Left Half)
+Section label: "CAPABILITIES"
+H2: "My formation."
+Skills grid: 4 columns, gap 16px
+Each skill pill:
+
+Background: rgba(255,255,255,0.04)
+Border: 1px rgba(76,175,80,0.15)
+Border-radius: 14px
+Padding: 20px
+Icon: 20px emoji
+Skill name: DM Sans 14px 500, #FFFFFF
+Level: DM Sans 11px 300, rgba(255,255,255,0.45)
+Progress bar: 3px tall, track rgba(255,255,255,0.08), fill #4CAF50, border-radius 100px
+Hover: border-color #4CAF50, translateY(-2px), box-shadow: 0 8px 24px rgba(76,175,80,0.15)
+
+Skills:
+
+Network Security — Advanced — 88%
+Python — Intermediate — 72%
+SIEM / Splunk — Intermediate — 68%
+Linux — Advanced — 82%
+Web Pentesting — Intermediate — 65%
+Cloud (AWS) — Beginner — 45%
+Digital Forensics — Intermediate — 60%
+Wireshark — Advanced — 80%
+
+
+OVERLAY 3 — ABOUT (Right Half)
+Two-column layout, gap 80px, vertically centered.
+Left column — visual card:
+
+Card bg: #4CAF50, border-radius 24px, padding 40px
+Decorative circles: two circles drawn in rgba(255,255,255,0.12) border, no fill — one 160×160px top-right, one 200×200px bottom-right
+Avatar circle: 72×72px, rgba(255,255,255,0.2) bg, border-radius 50%, initial "P" in DM Serif Display 28px white
+Name: DM Serif Display 24px, white
+Bio snippet: DM Sans 14px 300, rgba(255,255,255,0.85)
+Floating badge (bottom of card, slightly overlapping below): white bg, border-radius 12px, padding 12px 20px, box-shadow: 0 8px 32px rgba(0,0,0,0.2) — contains pulsing green dot (#4CAF50, 8px, CSS pulse animation) + text "Open to internships" DM Sans 12px 500 #0A1A0B
+
+Right column — text:
+
+Section label, H2: "Off the pitch."
+Body paragraphs: DM Sans 15px 300, rgba(255,255,255,0.6), line-height 1.8. Bold words in #FFFFFF 500 weight.
+CTA button: same primary pill style
+
+
+OVERLAY 4 — CONTACT (Right Goal)
+Two-column layout, gap 80px.
+Left:
+
+Section label: "GET IN TOUCH" — color #81C784
+H2: "Ready to play." — italic word in #81C784
+Body: DM Sans 15px 300, rgba(255,255,255,0.5)
+Contact links list: each link is a row with a 36×36px icon box (rgba(76,175,80,0.12) bg, border-radius 10px) + text rgba(255,255,255,0.7) 14px. Hover: text #81C784, icon box bg rgba(76,175,80,0.25)
+
+✉️ Email
+💼 LinkedIn
+🐙 GitHub
+📍 Location: Tampa, Florida
+
+
+
+Right — contact form:
+
+Inputs & textarea: bg rgba(255,255,255,0.06), border 1px rgba(255,255,255,0.1), border-radius 12px, padding 14px 18px, DM Sans 14px, text #FFFFFF, placeholder rgba(255,255,255,0.3). Focus: border-color #4CAF50
+Fields: Name, Email, Message (textarea 120px tall)
+Submit button: bg #4CAF50, text #FFFFFF, "Send it →", DM Sans 15px 500, padding 14px 32px, border-radius 100px. Hover: bg #2E7D32, scale 1.02
+
+
+STATS BAR (visible at bottom of hero, above pitch or as a persistent element)
+Background: #4CAF50. Padding 28px 48px. Four stats centered with 80px gap:
+
+Each stat: number in DM Serif Display 36px white, label in DM Sans 11px 400 uppercase letter-spacing 1px rgba(255,255,255,0.8)
+Stats: 12+ Projects · 3 Certifications · 2 Years Experience · ∞ Curiosity
+
+
+SPACING SYSTEM
+
+Section padding: 100px vertical, 48px horizontal
+Card internal padding: 24px
+Grid gaps: 20px (cards), 16px (skills), 80px (two-col layouts)
+Button padding: 14px 32px (large), 8px 20px (small nav)
+
+
+BORDER RADIUS SYSTEM
+
+Buttons / pills: 100px
+Large cards: 20px–24px
+Skill pills: 14px
+Input fields: 12px
+Icon boxes: 10px–14px
+Avatar: 50%
+
+
+MOTION / INTERACTIONS
+
+Hero text on load: fade up from translateY(30px) to translateY(0), opacity 0→1, duration 0.9s ease, staggered delay 0.1s per element
+Pitch zone hover: fill fades in rgba(76,175,80,0.25), label badge appears, transition 0.2s
+Pitch zone click: current overlay fades out, new overlay fades in, duration 0.35s ease
+Card hover: translateY(-6px), shadow 0 20px 60px rgba(76,175,80,0.12), duration 0.3s
+Skill pill hover: translateY(-2px), border #4CAF50, duration 0.2s
+Button hover: scale 1.02, bg darkens, duration 0.2s
+Pulsing dot: scale 1→1.4, opacity 1→0.5, 2s infinite loop
+Overlay open: fade in + slight translateY(10px→0), duration 0.35s ease-out
+Overlay close (×): fade out, duration 0.25s
