@@ -45,7 +45,7 @@ export default function App() {
 
       {/* Hero Section */}
       <div
-        className="relative min-h-screen flex flex-col items-center justify-center px-4 md:px-12 pt-[60px]"
+        className="relative min-h-screen flex flex-col items-center justify-start md:justify-center px-4 md:px-12 pt-20 md:pt-[60px] pb-28 md:pb-0"
         style={{
           background: '#1a2e1a',
           backgroundImage: 'repeating-linear-gradient(90deg, #1a2e1a 0px, #1a2e1a 80px, #1f351f 80px, #1f351f 160px)'
@@ -205,33 +205,37 @@ export default function App() {
 
         {/* Stats Bar */}
         <div
-          className="absolute bottom-0 left-0 right-0 py-7 px-4 md:px-12"
+          className="absolute bottom-0 left-0 right-0 py-3 md:py-7 px-4 md:px-12"
           style={{ background: 'var(--green-pitch)' }}
         >
-          <div className="max-w-6xl mx-auto flex items-center justify-center gap-8 md:gap-20 flex-wrap">
+          <div className="max-w-6xl mx-auto flex items-center justify-center gap-5 md:gap-20">
             {[
               { value: '3.5', label: 'GPA at FSU' },
               { value: '5', label: 'Products built' },
               { value: '1', label: 'Chapter co-founded' },
               { value: '∞', label: 'Drive' }
             ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '36px',
-                  color: 'white',
-                  marginBottom: '4px'
-                }}>
+              <div key={index} className="text-center whitespace-nowrap">
+                <div
+                  className="text-[22px] md:text-[36px]"
+                  style={{
+                    fontFamily: 'var(--font-serif)',
+                    color: 'white',
+                    marginBottom: '2px'
+                  }}
+                >
                   {stat.value}
                 </div>
-                <div style={{
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: '11px',
-                  fontWeight: 400,
-                  color: 'rgba(255, 255, 255, 0.8)',
-                  letterSpacing: '1px',
-                  textTransform: 'uppercase'
-                }}>
+                <div
+                  className="text-[9px] md:text-[11px]"
+                  style={{
+                    fontFamily: 'var(--font-sans)',
+                    fontWeight: 400,
+                    color: 'rgba(255, 255, 255, 0.8)',
+                    letterSpacing: '1px',
+                    textTransform: 'uppercase'
+                  }}
+                >
                   {stat.label}
                 </div>
               </div>
