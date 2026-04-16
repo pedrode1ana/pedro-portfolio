@@ -13,7 +13,7 @@ export default function AboutOverlay({ onClose }: AboutOverlayProps) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.35, ease: 'easeOut' }}
-      className="fixed inset-0 z-40 overflow-y-auto flex items-center justify-center"
+      className="fixed inset-0 z-40 overflow-y-auto"
       style={{
         background: 'rgba(10, 26, 11, 0.96)',
         backdropFilter: 'blur(20px)'
@@ -27,7 +27,7 @@ export default function AboutOverlay({ onClose }: AboutOverlayProps) {
         <X size={32} className="hover:text-[#4CAF50]" />
       </button>
 
-      <div className="px-12 py-24 max-w-7xl mx-auto">
+      <div className="px-4 md:px-12 pt-20 pb-12 md:py-24 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
           {/* Left - Visual Card */}
           <div className="relative rounded-[24px] p-10"
@@ -147,7 +147,11 @@ export default function AboutOverlay({ onClose }: AboutOverlayProps) {
                 I'm Brazilian, and I carry that with me. <span style={{ fontWeight: 500, color: 'white' }}>Jogo bonito</span> isn't just a style of football. It's a philosophy. Beautiful, expressive, disciplined. That's how I want to build.
               </p>
 
-              <button className="px-8 py-3.5 rounded-full transition-all hover:scale-105"
+              <a
+                href="https://www.linkedin.com/in/pedrodelana/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-3.5 rounded-full transition-all hover:scale-105"
                 style={{
                   background: 'var(--green-pitch)',
                   color: 'white',
@@ -156,7 +160,7 @@ export default function AboutOverlay({ onClose }: AboutOverlayProps) {
                   fontWeight: 500
                 }}>
                 Let's connect
-              </button>
+              </a>
             </div>
           </div>
         </div>

@@ -44,7 +44,7 @@ export default function SkillsOverlay({ onClose }: SkillsOverlayProps) {
         <X size={32} className="hover:text-[#4CAF50]" />
       </button>
 
-      <div className="px-12 py-24 max-w-7xl mx-auto">
+      <div className="px-4 md:px-12 pt-20 pb-12 md:py-24 max-w-7xl mx-auto">
         <div style={{
           fontFamily: 'var(--font-sans)',
           fontSize: '11px',
@@ -91,7 +91,7 @@ export default function SkillsOverlay({ onClose }: SkillsOverlayProps) {
             <div className="h-px flex-1" style={{ background: 'rgba(129, 199, 132, 0.2)' }} />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {aiSkills.map((skill, index) => (
             <motion.div
               key={index}
@@ -158,7 +158,7 @@ export default function SkillsOverlay({ onClose }: SkillsOverlayProps) {
             <div className="h-px flex-1" style={{ background: 'rgba(129, 199, 132, 0.2)' }} />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {coreSkills.map((skill, index) => (
               <motion.div
                 key={index}

@@ -28,11 +28,7 @@ export default function App() {
   }, [activeOverlay]);
 
   const handleZoneClick = (zone: OverlayType) => {
-    if (zone === 'home') {
-      setActiveOverlay(null);
-    } else {
-      setActiveOverlay(zone);
-    }
+    setActiveOverlay(zone);
   };
 
   return (
@@ -49,7 +45,7 @@ export default function App() {
 
       {/* Hero Section */}
       <div
-        className="relative min-h-screen flex flex-col items-center justify-center px-12 pt-[60px]"
+        className="relative min-h-screen flex flex-col items-center justify-center px-4 md:px-12 pt-[60px]"
         style={{
           background: '#1a2e1a',
           backgroundImage: 'repeating-linear-gradient(90deg, #1a2e1a 0px, #1a2e1a 80px, #1f351f 80px, #1f351f 160px)'
@@ -209,10 +205,10 @@ export default function App() {
 
         {/* Stats Bar */}
         <div
-          className="absolute bottom-0 left-0 right-0 py-7 px-12"
+          className="absolute bottom-0 left-0 right-0 py-7 px-4 md:px-12"
           style={{ background: 'var(--green-pitch)' }}
         >
-          <div className="max-w-6xl mx-auto flex items-center justify-center gap-20 flex-wrap">
+          <div className="max-w-6xl mx-auto flex items-center justify-center gap-8 md:gap-20 flex-wrap">
             {[
               { value: '3.5', label: 'GPA at FSU' },
               { value: '5', label: 'Products built' },
@@ -243,6 +239,21 @@ export default function App() {
           </div>
         </div>
       </div>
+
+      {/* Persistent backdrop — stays opaque while switching between overlays so the home page never flashes through */}
+      <AnimatePresence>
+        {activeOverlay && (
+          <motion.div
+            key="overlay-backdrop"
+            className="fixed inset-0"
+            style={{ zIndex: 39, background: 'rgba(10, 26, 11, 0.96)', backdropFilter: 'blur(20px)' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          />
+        )}
+      </AnimatePresence>
 
       {/* Overlays */}
       <AnimatePresence>

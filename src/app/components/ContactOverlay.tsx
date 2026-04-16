@@ -29,7 +29,7 @@ export default function ContactOverlay({ onClose }: ContactOverlayProps) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.35, ease: 'easeOut' }}
-      className="fixed inset-0 z-40 overflow-y-auto flex items-center justify-center"
+      className="fixed inset-0 z-40 overflow-y-auto"
       style={{
         background: 'rgba(10, 26, 11, 0.96)',
         backdropFilter: 'blur(20px)'
@@ -43,7 +43,7 @@ export default function ContactOverlay({ onClose }: ContactOverlayProps) {
         <X size={32} className="hover:text-[#4CAF50]" />
       </button>
 
-      <div className="px-12 py-24 max-w-6xl mx-auto w-full">
+      <div className="px-4 md:px-12 pt-20 pb-12 md:py-24 max-w-6xl mx-auto w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
           {/* Left - Contact Info */}
           <div>

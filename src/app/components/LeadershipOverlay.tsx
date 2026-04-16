@@ -50,7 +50,7 @@ export default function LeadershipOverlay({ onClose }: LeadershipOverlayProps) {
         <X size={32} className="hover:text-[#4CAF50]" />
       </button>
 
-      <div className="px-12 py-24 max-w-7xl mx-auto">
+      <div className="px-4 md:px-12 pt-20 pb-12 md:py-24 max-w-7xl mx-auto">
         <div style={{
           fontFamily: 'var(--font-sans)',
           fontSize: '11px',
