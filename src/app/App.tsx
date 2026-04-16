@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Navigation from './components/Navigation';
 import FootballPitch from './components/FootballPitch';
@@ -11,8 +11,21 @@ import LeadershipOverlay from './components/LeadershipOverlay';
 
 type OverlayType = 'work' | 'skills' | 'about' | 'contact' | 'leadership' | null;
 
+const pageTitles: Record<NonNullable<OverlayType> | 'home', string> = {
+  home:       'Pedro De Lana',
+  work:       'Pedro De Lana - Work',
+  skills:     'Pedro De Lana - Skills',
+  about:      'Pedro De Lana - About',
+  contact:    'Pedro De Lana - Contact',
+  leadership: 'Pedro De Lana - Leadership',
+};
+
 export default function App() {
   const [activeOverlay, setActiveOverlay] = useState<OverlayType>(null);
+
+  useEffect(() => {
+    document.title = activeOverlay ? pageTitles[activeOverlay] : pageTitles.home;
+  }, [activeOverlay]);
 
   const handleZoneClick = (zone: OverlayType) => {
     if (zone === 'home') {
